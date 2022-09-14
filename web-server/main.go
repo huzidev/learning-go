@@ -20,7 +20,9 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello, World")
 }
 
-func formHandler(w http.ResponseWriter, r *http.Request)
+func formHandler(w http.ResponseWriter, r *http.Request) {
+
+}
 
 func main() {
 	fileServer := http.FileServer(http.Dir("./static"))
@@ -29,6 +31,8 @@ func main() {
 	http.HandleFunc("/form", formHandler)
 
 	fmt.Printf("Starting server at port 8000\n")
+
+	// err != nil mean err is not empty hence some error occurred
 	if err := http.ListenAndServe(":8000", nil); err != nil {
 		log.Fatal(err)
 	}
