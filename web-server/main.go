@@ -25,6 +25,12 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
 	}
+
+	fmt.Fprint(w, "Post request Successful\n")
+	name := r.FormValue("name")
+	address := r.FormValue("address")
+	fmt.Fprintf(w, "Name = %s\n", name)
+	fmt.Fprintf(w, "Address = %s\n", address)
 }
 
 func main() {
