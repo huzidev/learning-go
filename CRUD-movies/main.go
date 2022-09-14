@@ -7,6 +7,7 @@ import (
 	// 	"math/rand"
 	// 	"net/http"
 	// 	"strconv" // because id will INT and we've to make it String
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -28,8 +29,10 @@ type Director struct {
 
 var movies []Movie
 
-func getMovies(r http.ResponseWriter, w *http.Request) {
-
+func getMovies(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	// encode complete movies slice which is defined above var movies []Movie
+	json.NewEncoder(w).Encode(movies)
 }
 
 func main() {
