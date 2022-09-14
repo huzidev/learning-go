@@ -29,6 +29,8 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Post request Successful\n")
 	name := r.FormValue("name")
 	address := r.FormValue("address")
+
+	// Fprintf for writing things
 	fmt.Fprintf(w, "Name = %s\n", name)
 	fmt.Fprintf(w, "Address = %s\n", address)
 }
