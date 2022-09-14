@@ -28,6 +28,10 @@ type Director struct {
 
 var movies []Movie
 
+func getMovies(r http.ResponseWriter, w *http.Request) {
+
+}
+
 func main() {
 	r := mux.NewRouter()
 
