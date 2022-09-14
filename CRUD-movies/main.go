@@ -31,6 +31,30 @@ var movies []Movie
 func main() {
 	r := mux.NewRouter()
 
+	// by default movies
+	movies = append(movies,
+		Movie{
+			ID:    "1",
+			Isbn:  "123456",
+			Title: "Dark",
+			Director: &Director{
+				FirstName: "Sohaib",
+				LastName:  "Hassan",
+			},
+		},
+	)
+	movies = append(movies,
+		Movie{
+			ID:    "2",
+			Isbn:  "654321",
+			Title: "Dragon ball",
+			Director: &Director{
+				FirstName: "Huzi",
+				LastName:  "Boss",
+			},
+		},
+	)
+
 	// functions
 	r.HandleFunc("/movies", getMovies).Methods("GET")
 	r.HandleFunc("/movies/{id}", getMovie).Methods("GET")
