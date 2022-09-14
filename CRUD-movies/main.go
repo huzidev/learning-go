@@ -33,4 +33,6 @@ func main() {
 	r.HandleFunc("/movies", createMovie).Methods("PUT")
 	r.HandleFunc("/movies/{id}", updateMovie).Methods("POST")
 	r.HandleFunc("/movies/{id}", deleteMovie).Methods("DELETE")
+
+	port := 8000
 }
