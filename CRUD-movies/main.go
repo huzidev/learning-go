@@ -7,6 +7,10 @@ import (
 	// 	"math/rand"
 	// 	"net/http"
 	// 	"strconv" // because id will INT and we've to make it String
+	"fmt"
+	"log"
+	"net/http"
+
 	"github.com/gorilla/mux"
 )
 
@@ -35,4 +39,6 @@ func main() {
 	r.HandleFunc("/movies/{id}", deleteMovie).Methods("DELETE")
 
 	port := 8000
+	fmt.Printf("Starting server at port %v\n", port)
+	log.Fatal(http.ListenAndServe(":8000", r))
 }
