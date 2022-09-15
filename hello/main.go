@@ -4,7 +4,7 @@ import "fmt"
 
 var message string
 
-func main(name string) {
+func Hello(name string) {
 	message := fmt.Sprintf("Hello, %v Welcome", name)
 	return message
 }
