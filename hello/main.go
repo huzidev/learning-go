@@ -8,3 +8,5 @@ func Hello(name string) {
 	message := fmt.Sprintf("Hello, %v Welcome", name)
 	return message
 }
+
+var message string
