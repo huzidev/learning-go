@@ -1,10 +1,10 @@
 package main
 
-import {
+import (
 	"fmt"
-	
+
 	"example.com/greetings"
-}
+)
 
 func main() {
 	message := greetings.Hello("Huzi")
